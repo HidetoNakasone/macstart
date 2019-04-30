@@ -22,7 +22,7 @@ def db
 end
 
 get '/' do
-  @res = db.exec('select * from posts order by id desc;')
+  @res = db.exec('select * from posts order by slide_num asc;')
   erb :index
 end
 
@@ -31,7 +31,7 @@ get '/ajax/dev' do
 end
 
 
-post '/add' do
-  db.exec('insert into posts(slide_num, title, content, created_at, updated_at) values($1, $2, $3, $4, $5);', [params[:slide_num], params[:title], params[:content].gsub(/\r\n|\r|\n/, "<br />"), DateTime.now, DateTime.now])
-  redirect '/'
-end
+# post '/add' do
+#   db.exec('insert into posts(slide_num, title, content, created_at, updated_at) values($1, $2, $3, $4, $5);', [params[:slide_num], params[:title], params[:content].gsub(/\r\n|\r|\n/, "<br />"), DateTime.now, DateTime.now])
+#   redirect '/'
+# end
