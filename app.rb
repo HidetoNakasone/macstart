@@ -3,27 +3,28 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 
-# def db 
-#   @db ||= PG.connect(
-#     host: '127.0.0.1',
-#     user: 'hep',
-#     password: 'hep',
-#     dbname: 'macstart'
-#   )
-# end
-
-def db
+def db 
   @db ||= PG.connect(
-    host: ENV['HOST'],
-    port: ENV['PORT'],
-    dbname: ENV['DATABSE'],
-    user: ENV['USER'],
-    password: ENV['PASSWORD']
+    host: '127.0.0.1',
+    user: 'hep',
+    password: 'hep',
+    dbname: 'macstart'
   )
 end
 
+# def db
+#   @db ||= PG.connect(
+#     host: ENV['HOST'],
+#     port: ENV['PORT'],
+#     dbname: ENV['DATABSE'],
+#     user: ENV['USER'],
+#     password: ENV['PASSWORD']
+#   )
+# end
+
 get '/' do
-  @res = db.exec('select * from posts;')
+  # @res = db.exec('select * from posts;')
+  @res = [{}]
   erb :index
 end
 
@@ -35,8 +36,4 @@ end
 post '/add' do
   db.exec('insert into posts(slide_num, title, content, created_at, updated_at) values($1, $2, $3, $4, $5);', [params[:slide_num], params[:title], params[:content].gsub(/\r\n|\r|\n/, "<br />"), DateTime.now, DateTime.now])
   redirect '/'
-end
-
-get '/dev' do
-  @db.methods.to_s
 end
