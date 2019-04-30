@@ -22,7 +22,7 @@ def db
 end
 
 get '/' do
-  @res = db.exec('select * from posts;')
+  @res = db.exec('select * from posts order by id asc;')
   erb :index
 end
 
