@@ -31,7 +31,7 @@ get '/' do
   #   user: ENV['USER'],
   #   password: ENV['PASSWORD']
   # )
-  @dev = ENV['HOST'] + ENV['PORT'] + ENV['DATABASE'] + ENV['USER']
+  @dev = ENV['HOST'] + ENV['PORT'] + ENV['DATABASE'] + ENV['USER'] + ENV['PASSWORD']
   @res = [{}]
   erb :index
 end
