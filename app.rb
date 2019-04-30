@@ -16,23 +16,16 @@ def db
   @db ||= PG.connect(
     host: ENV['HOST'],
     port: ENV['PORT'],
-    dbname: ENV['DATABSE'],
+    dbname: ENV['DATABASE'],
     user: ENV['USER'],
     password: ENV['PASSWORD']
   )
 end
 
 get '/' do
-  # @res = db.exec('select * from posts;')
-  # @dev = (
-  #   host: ENV['HOST'],
-  #   port: ENV['PORT'],
-  #   dbname: ENV['DATABSE'],
-  #   user: ENV['USER'],
-  #   password: ENV['PASSWORD']
-  # )
-  @dev = ENV['HOST'] + ENV['PORT']
-  @res = [{}]
+  @res = db.exec('select * from posts;')
+  # @dev = ENV['HOST'] + ENV['PORT'] + ENV['DATABASE']
+  # @res = [{}]
   erb :index
 end
 
