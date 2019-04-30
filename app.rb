@@ -3,27 +3,34 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 
-def db 
-  @db ||= PG.connect(
-    host: '127.0.0.1',
-    user: 'hep',
-    password: 'hep',
-    dbname: 'macstart'
-  )
-end
-
-# def db
+# def db 
 #   @db ||= PG.connect(
-#     host: ENV['HOST'],
-#     port: ENV['PORT'],
-#     dbname: ENV['DATABSE'],
-#     user: ENV['USER'],
-#     password: ENV['PASSWORD']
+#     host: '127.0.0.1',
+#     user: 'hep',
+#     password: 'hep',
+#     dbname: 'macstart'
 #   )
 # end
 
+def db
+  @db ||= PG.connect(
+    host: ENV['HOST'],
+    port: ENV['PORT'],
+    dbname: ENV['DATABSE'],
+    user: ENV['USER'],
+    password: ENV['PASSWORD']
+  )
+end
+
 get '/' do
   # @res = db.exec('select * from posts;')
+  @dev = (
+    host: ENV['HOST'],
+    port: ENV['PORT'],
+    dbname: ENV['DATABSE'],
+    user: ENV['USER'],
+    password: ENV['PASSWORD']
+  )
   @res = [{}]
   erb :index
 end
