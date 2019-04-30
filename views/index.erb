@@ -31,6 +31,19 @@
 
   <div id="home">
 
+    <div id="add_form">
+      <form action="/add" method="POST">
+        <label for="title">タイトル：</label>
+        <input id="title" type="text" name="title">
+        <label for="side_num">スライド番号：</label>
+        <input id="slide_num" type="number" name="slide_num">
+        <label for="content">コンテンツ：</label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <input type="submit" value="Add Item">
+      </form>
+    </div>
+
+
     <% @res.each do |content| %>
 
     <div class="post">
@@ -49,18 +62,6 @@
     </div>
 
     <% end %>
-
-    <div id="add_form">
-      <form action="/add" method="POST">
-        <label for="title">タイトル：</label>
-        <input id="title" type="text" name="title">
-        <label for="side_num">スライド番号：</label>
-        <input id="slide_num" type="number" name="slide_num">
-        <label for="content">コンテンツ：</label>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        <input type="submit" value="Add Item">
-      </form>
-    </div>
 
   </div>
 
