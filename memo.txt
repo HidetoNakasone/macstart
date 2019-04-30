@@ -1,0 +1,4 @@
+
+create database macstart
+
+create table posts(id serial primary key, slide_num int not null, title varchar not null, content varchar not null, created_at timestamp not null, updated_at timestamp not null);

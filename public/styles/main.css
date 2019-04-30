@@ -1,0 +1,345 @@
+
+*{
+  padding: 0;
+  margin: 0;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+}
+
+main {
+  display: flex;
+}
+
+#page_header {
+  width: 100%;
+  height: calc(100vh * 0.5);
+  position: relative;
+
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+}
+
+#ph_back_image {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  
+  background-position: center;
+  background-size: cover;
+  background-image: url('/images/back_sample.jpg');
+
+  /* color と image をブレンドしている */
+  /* 未対応のブラウザがあるので注意 */
+  /* 追記： スマホで使えなかったので、コメントアウトする */
+  /* background-blend-mode: multiply; */
+}
+
+#ph_main {
+  width: 100%;
+  height: 82%;
+
+  position: absolute;
+}
+
+#ph_container {
+  width: 92%;
+  height: 100px;
+
+  position: absolute;
+  left: 4%;
+
+  transform: translateY(-50%);
+
+  /* background-color: rgb(84, 159, 99); */
+}
+
+#ph_service_icon {
+  border-radius: 50%;
+  overflow: hidden;
+
+  position: absolute;
+}
+
+#ph_service_icon_img {
+  width: 100%;
+  height: 100%;
+}
+
+#ph_service_name {
+  position: absolute;
+  top: 50%;
+  
+  height: 80%;
+
+  transform: translateY(-50%);
+
+}
+
+#ph_service_name_p {
+  color: rgb(255, 255, 255);
+  /* color: rgb(177, 196, 94); */
+  font-size: calc(2.2vw + 1em);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#ph_list {
+  width: 100%;
+  height: 54px;
+  background-color: rgb(28, 156, 220);
+
+  position: absolute;
+  bottom: 0;
+}
+
+#ph_list_ul {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+
+  /* なんかちょっとずれてる。本来は50%だけど。。。あとで原因探る。borderの分かな？？ */
+  transform: translateY(-53%);
+}
+
+/* 全体 */
+.ph_list_li {
+  float: left;
+  list-style: none;
+  padding: 14px;
+
+  /* borderの太さ分上にずれるから、その大きさ分上も付ける */
+  margin-top: 3px;
+
+  cursor: pointer;
+}
+
+.ph_list_li span {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+#check_on_li {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+#check_on_span {
+  color: rgb(255, 255, 255);
+}
+
+/* １つ目 */
+/* .ph_list_li:first-child {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.2);
+} */
+
+/* 2つ目以降 */
+/* li ~ .ph_list_li {
+
+} */
+
+#ph_button {
+  position: absolute;
+
+  bottom: 0;
+  right: 5%;
+  transform: translateY(+50%);
+
+  width: 60px;
+  height: 60px;
+  background-color: rgb(244, 208, 2);
+  border-radius: 50%;
+
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+  transition: 0.1s;
+
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+}
+
+
+#ph_button:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+  transition: 0.1s;
+
+  cursor: pointer;
+}
+
+
+/* ========= */
+
+
+main {
+  width: 100%;
+  height: 500px;
+
+  margin-top: 100px;
+}
+
+
+#home {
+  position: absolute;
+}
+
+.post {
+  width: 100%;
+
+  background-color: rgb(255, 255, 255);
+
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+
+  margin-bottom: 100px;
+}
+
+.post_img {
+  /* height: 400px; */
+  
+  /* width: calc(100vw * 0.3); */
+  /* float: left; */
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid rgba(122, 122, 122, 0.2);
+}
+
+.post_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.post_content {
+  /* width: calc(100% - (100vw * 0.3)); */
+
+  /* position: absolute; */
+  /* left: calc(100vw * 0.3); */
+
+  /* float: right; */
+
+  /* borderの高さが、画像の高さよりも小さくなると困る。 */
+  /* 画像の高さよりは小さくならないと様にする。 */
+  min-height: calc(((100vw * 0.3) / 16) * 9);
+  border-left: 1px solid rgba(122, 122, 122, 0.2);
+
+
+  border-radius: 0 6px 6px 0;
+
+  box-sizing: border-box;
+  padding: 22px 30px;
+}
+
+.img_title {
+  font-size: 1.5em;
+  color: rgb(152, 152, 152);
+
+  height: 30px;
+  overflow: hidden;
+
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: calc(1em + 0.5vw);
+  color: rgb(91, 91, 91);
+
+}
+
+.description p {
+  word-wrap: break-word;
+}
+
+
+@media screen and (min-width: 1101px) {
+  #ph_container {
+    top: 50%;
+  }
+  #ph_service_icon {
+    height: 100px;
+    width: 100px;
+  }
+  #ph_service_name {
+    left: 120px;
+    width: calc(100% - 120px - 8%);
+  }
+  #home {
+    right: 10%;
+    width: 80%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: calc(100vw*0.36) 1fr;
+  }
+  .post_img {
+    border-radius: 6px 0 0 6px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  #ph_container {
+    top: 50%;
+  }
+  #ph_service_icon {
+    height: 100px;
+    width: 100px;
+  }
+  #ph_service_name {
+    left: 120px;
+    width: calc(100% - 120px - 8%);
+  }
+  #home {
+    right: 7%;
+    width: 86%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: calc(100vw*0.4) 1fr;
+  }
+  .post_img {
+    border-radius: 6px 0 0 6px;
+  }
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 800px) {
+  #ph_container {
+    top: 35%;
+  }
+  #ph_service_icon {
+    height: 80px;
+    width: 80px;
+  }
+  #ph_service_name {
+    top: 150px;
+    width: calc(100% - 4%);
+  }
+  #home {
+    right: 5%;
+    width: 90%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .post_img {
+    border-radius: 6px 6px 0 0;
+  }
+}
+
