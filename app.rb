@@ -23,13 +23,6 @@ end
 
 get '/' do
   @res = db.exec('select * from posts;')
-  # @dev = (
-  #   host: ENV['HOST'],
-  #   port: ENV['PORT'],
-  #   dbname: ENV['DATABSE'],
-  #   user: ENV['USER'],
-  #   password: ENV['PASSWORD']
-  # )
   erb :index
 end
 
