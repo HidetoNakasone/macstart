@@ -31,6 +31,7 @@ get '/' do
   #   user: ENV['USER'],
   #   password: ENV['PASSWORD']
   # )
+  @dev = 'aaa'
   @res = [{}]
   erb :index
 end
