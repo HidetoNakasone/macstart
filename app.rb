@@ -38,5 +38,5 @@ post '/add' do
 end
 
 get '/dev' do
-  'Hello, World! by Heroku.'
+  @db.methods.to_s
 end
