@@ -30,7 +30,6 @@ get '/' do
   #   user: ENV['USER'],
   #   password: ENV['PASSWORD']
   # )
-  @res = [{}]
   erb :index
 end
 
