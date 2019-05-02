@@ -1,33 +1,33 @@
 
 require 'sinatra'
 require 'sinatra/reloader'
+
 require 'pg'
 
-# def db 
-#   @db ||= PG.connect(
-#     host: '127.0.0.1',
-#     user: 'hep',
-#     password: 'hep',
-#     dbname: 'macstart'
-#   )
-# end
+require 'dotenv'
+Dotenv.load ".env"
 
 def db
   @db ||= PG.connect(
     host: ENV['HOST'],
-    user: ENV['USER'],
+    user: ENV['USER_NAME'],
     password: ENV['PASSWORD'],
     dbname: ENV['DATABASE']
   )
 end
 
 get '/' do
-  @res = db.exec('select * from posts order by id asc;')
+  # @res = db.exec('SELECT * FROM posts ORDER BY id ASC FETCH FIRST 1 ROWS ONLY;')
+  @res = []
   erb :index
 end
 
 get '/ajax/dev' do
-  {name: 'サンプルだよ！', msg: '中身の例'}.to_json
+  get_size = 3
+  # 〇〇までを除外して、〇〇個取得
+  res = db.exec('SELECT * FROM posts ORDER BY id ASC OFFSET $1 ROWS FETCH FIRST $2 ROWS ONLY;', [params[:read_first_num], get_size]).map{ |i| i }
+  # res = [{'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, ]
+  res.to_json
 end
 
 

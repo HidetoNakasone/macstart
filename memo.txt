@@ -2,3 +2,6 @@
 create database macstart
 
 create table posts(id serial primary key, slide_num int not null, title varchar not null, content varchar not null, created_at timestamp not null, updated_at timestamp not null);
+
+追記： 2019/05/02
+最初のロードで表示する数は5件だけにして、あとはAjaxで取りに行く。
