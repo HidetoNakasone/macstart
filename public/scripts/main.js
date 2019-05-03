@@ -80,7 +80,7 @@ window.addEventListener('scroll', () => {
     // console.log("s: " + scroll_height)
     // console.log("w: " + window_height)
     // console.log("d: " + difference)
-    if (difference < 1200) {
+    if (difference < 800) {
     // if (difference < 750) {
       // console.log("画面下");
       myAjax();

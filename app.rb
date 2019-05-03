@@ -27,7 +27,7 @@ get '/ajax/dev' do
   # 〇〇までを除外して、〇〇個取得
   res = db.exec('SELECT * FROM posts ORDER BY id ASC OFFSET $1 ROWS FETCH FIRST $2 ROWS ONLY;', [params[:read_first_num], get_size]).map{ |i| i }
 
-  sleep(1) # dev
+  # sleep(1) # dev
 
   # res = [{'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, {'id' => 0, 'slide_num' => 0, 'title' => 'タイトル', 'content' => "コンテンツ"}, ]
   res.to_json
