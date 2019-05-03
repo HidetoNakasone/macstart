@@ -2,7 +2,7 @@
 *{
   padding: 0;
   margin: 0;
-
+  
   font-family: 'Roboto', sans-serif;
 }
 
@@ -24,20 +24,20 @@ main {
 #page_header {
   width: 100%;
   position: relative;
-
+  
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
 }
 
 #ph_back_image {
   width: 100%;
   height: 100%;
-
+  
   background-color: rgba(0, 0, 0, 0.4);
   
   background-position: center;
   background-size: cover;
   background-image: url('/images/back_sample.jpg');
-
+  
   /* color と image をブレンドしている */
   /* 未対応のブラウザがあるので注意 */
   /* 追記： スマホで使えなかったので、コメントアウトする */
@@ -47,26 +47,26 @@ main {
 #ph_main {
   width: 100%;
   height: 82%;
-
+  
   position: absolute;
 }
 
 #ph_container {
   width: 92%;
   height: 100px;
-
+  
   position: absolute;
   left: 4%;
-
+  
   transform: translateY(-50%);
-
+  
   /* background-color: rgb(84, 159, 99); */
 }
 
 #ph_service_icon {
   border-radius: 50%;
   overflow: hidden;
-
+  
   position: absolute;
 }
 
@@ -80,16 +80,16 @@ main {
   top: 50%;
   
   height: 80%;
-
+  
   transform: translateY(-50%);
-
+  
 }
 
 #ph_service_name_p {
   color: rgb(255, 255, 255);
   /* color: rgb(177, 196, 94); */
   font-size: calc(2.2vw + 1em);
-
+  
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -99,7 +99,7 @@ main {
   width: 100%;
   height: 54px;
   background-color: rgb(28, 156, 220);
-
+  
   position: absolute;
   bottom: 0;
 }
@@ -108,7 +108,7 @@ main {
   position: absolute;
   top: 50%;
   left: 30px;
-
+  
   /* なんかちょっとずれてる。本来は50%だけど。。。あとで原因探る。borderの分かな？？ */
   transform: translateY(-53%);
 }
@@ -118,10 +118,10 @@ main {
   float: left;
   list-style: none;
   padding: 14px;
-
+  
   /* borderの太さ分上にずれるから、その大きさ分上も付ける */
   margin-top: 3px;
-
+  
   cursor: pointer;
 }
 
@@ -149,24 +149,24 @@ main {
 
 /* 2つ目以降 */
 /* li ~ .ph_list_li {
-
+  
 } */
 
 #ph_button {
   position: absolute;
-
+  
   bottom: 0;
   right: 5%;
   transform: translateY(+50%);
-
+  
   width: 60px;
   height: 60px;
   background-color: rgb(244, 208, 2);
   border-radius: 50%;
-
+  
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
   transition: 0.1s;
-
+  
   font-size: 40px;
   line-height: 60px;
   text-align: center;
@@ -176,7 +176,7 @@ main {
 #ph_button:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
   transition: 0.1s;
-
+  
   cursor: pointer;
 }
 
@@ -187,23 +187,25 @@ main {
 main {
   width: 100%;
   height: 500px;
-
+  
   margin-top: 100px;
 }
 
 
 #home {
   position: absolute;
+
+  padding-bottom: 250px;
 }
 
 .post {
   width: 100%;
-
+  
   background-color: rgb(255, 255, 255);
-
+  
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
-
+  
   margin-bottom: 100px;
 }
 
@@ -212,11 +214,11 @@ main {
   
   /* width: calc(100vw * 0.3); */
   /* float: left; */
-
+  
   overflow: hidden;
-
+  
   box-sizing: border-box;
-
+  
   border-bottom: 1px solid rgba(130, 130, 130, 0.4);
 }
 
@@ -227,20 +229,20 @@ main {
 
 .post_content {
   /* width: calc(100% - (100vw * 0.3)); */
-
+  
   /* position: absolute; */
   /* left: calc(100vw * 0.3); */
-
+  
   /* float: right; */
-
+  
   /* borderの高さが、画像の高さよりも小さくなると困る。 */
   /* 画像の高さよりは小さくならないと様にする。 */
   min-height: calc(((100vw * 0.3) / 16) * 9);
   border-left: 1px solid rgba(130, 130, 130, 0.4);
-
-
+  
+  
   border-radius: 0 6px 6px 0;
-
+  
   box-sizing: border-box;
   padding: 22px 30px;
 }
@@ -248,17 +250,17 @@ main {
 .img_title {
   font-size: 1.5em;
   color: rgb(152, 152, 152);
-
+  
   height: 30px;
   overflow: hidden;
-
+  
   margin-bottom: 20px;
 }
 
 .description {
   font-size: calc(0.8em + 0.3vw);
   color: rgb(91, 91, 91);
-
+  
 }
 
 .description p {
@@ -320,7 +322,7 @@ main {
   .post_img {
     border-radius: 6px 0 0 6px;
   }
-
+  
 }
 
 @media screen and (min-width: 1px) and (max-width: 800px) {
@@ -351,3 +353,66 @@ main {
   }
 }
 
+.loading-animation {
+  /* position: absolute; */
+  position: fixed;
+  bottom: 28%;
+  left: calc(50vw);
+}
+
+.loading-animation > div {
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  
+  width: 100px;
+  height: 100px;
+  
+  opacity: 0;
+  animation: loading-animation 1.6s 0s linear infinite;
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loading-animation > div {
+  background-color: rgb(154, 201, 12);
+  border-radius: 100%;
+}
+
+.loading-animation > div:nth-child(2) {
+  animation-delay: -.5s;
+}
+
+.loading-animation > div:nth-child(3) {
+  animation-delay: -.25s;
+}
+
+.loading-animation::after {
+  content: "Now Loading";
+  display: block;
+  width: 100px;
+  color: rgb(95, 95, 95);
+  
+  position: absolute;
+  left: -46px;
+  top: 50px;
+  
+  opacity: 0;
+  animation: text-animation 2s 0s linear infinite;
+}
+
+@keyframes text-animation {
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,7 +1,7 @@
 <div id="page_header">
-
+  
   <div id="ph_back_image">
-
+    
     <div id="ph_main">
       <div id="ph_container">
         <div id="ph_service_icon">
@@ -12,27 +12,27 @@
         </div>
       </div>
     </div>
-
-
+    
+    
     <div id="ph_list">
       <ul id="ph_list_ul">
         <!-- 現在のページのリンクには、idを振る予定(テンプレート生成時にサーバー側で) -->
         <li id="check_on_li" class="ph_list_li"><span id="check_on_span">Contents</span></li>
       </ul>
     </div>
-
+    
     <a href="https://github.com/HidetoNakasone/macstart">
       <i id="ph_button" class="fab fa-github"></i>
     </a>
-
+    
   </div>
-
+  
 </div>
 
 <main>
-
+  
   <div id="home">
-
+    
     <!-- <div id="add_form">
       <form action="/add" method="POST">
         <label for="title">タイトル：</label>
@@ -44,10 +44,10 @@
         <input type="submit" value="Add Item">
       </form>
     </div> -->
-
-
+    
+    
     <% @res.each do |content| %>
-
+    
     <div class="post">
       <div class="post_img">
         <img src="/images/<%= content['slide_num'] %>.png">
@@ -59,14 +59,18 @@
         <div class="description">
           <p><%= content['content'] %></p>
         </div>
-
+        
       </div>
     </div>
-
+    
     <% end %>
-
+    
   </div>
-
+  
+  <div id="target">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-
+  
 </main>

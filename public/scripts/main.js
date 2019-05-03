@@ -10,7 +10,18 @@ function myAjax() {
   xhr.open('get', '/ajax/dev?read_first_num=' + post_length)
   xhr.send()
 
+  // 通信中
+  if (xhr.readyState === XMLHttpRequest.OPENED) {
+    console.log("通信中...")
+
+    // ロードアニメーションを起動するための、クラス付与
+    obj = document.getElementById('target')
+    obj.setAttribute('class', 'loading-animation')
+  }
+
   xhr.onreadystatechange = function () {
+
+    // 通信完了
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         
@@ -19,7 +30,9 @@ function myAjax() {
         reDraw_posts(res)
         
         // console.log(res); // dev
-        
+
+        // ロードアニメーションのクラスを消す
+        obj.removeAttribute('class')
       }
     }
   };
@@ -50,7 +63,14 @@ function reDraw_posts(res) {
   
 }
 
+// 初回起動
+window.onload = function() {
+  myAjax();
+}
+
 window.addEventListener('scroll', () => {
+
+  // 通信中でなければ
   if (xhr.readyState !== 3) {
 
     var window_height = document.documentElement.scrollHeight; // ページ全体の高さ
@@ -60,7 +80,8 @@ window.addEventListener('scroll', () => {
     // console.log("s: " + scroll_height)
     // console.log("w: " + window_height)
     // console.log("d: " + difference)
-    if (difference < 760) {
+    if (difference < 1200) {
+    // if (difference < 750) {
       // console.log("画面下");
       myAjax();
     } else {
