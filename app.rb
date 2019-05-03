@@ -4,8 +4,8 @@ require 'sinatra/reloader'
 
 require 'pg'
 
-require 'dotenv'
-Dotenv.load ".env"
+# require 'dotenv'
+# Dotenv.load ".env"
 
 def db
   @db ||= PG.connect(
