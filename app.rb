@@ -23,7 +23,7 @@ get '/' do
 end
 
 get '/ajax/dev' do
-  get_size = 3
+  get_size = 8
   # 〇〇までを除外して、〇〇個取得
   res = db.exec('SELECT * FROM posts ORDER BY id ASC OFFSET $1 ROWS FETCH FIRST $2 ROWS ONLY;', [params[:read_first_num], get_size]).map{ |i| i }
 
