@@ -46,7 +46,7 @@ function reDraw_posts(res) {
     content += ""
     + "<div class='post'>"
     +   "<div class='post_img'>"
-    +     "<img src='/images/" + res[i]['slide_num'] + ".png'>"
+    +     "<img src='/images/" + res[i]['slide_num'] + ".jpg'>"
     +   "</div>"
     +   "<div class='post_content'>"
     +     "<div class='img_title'>"
